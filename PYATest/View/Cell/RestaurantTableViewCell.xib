@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="4De-kI-7ng" customClass="RestaurantTableViewCell" customModule="PYATest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="493" height="89"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4De-kI-7ng" id="q6S-GY-cnw">
+                <rect key="frame" x="0.0" y="0.0" width="493" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHL-W1-cxS">
+                        <rect key="frame" x="20" y="34.5" width="453" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbR-sq-KRS">
+                        <rect key="frame" x="20" y="63" width="453" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vHL-W1-cxS" firstAttribute="centerY" secondItem="q6S-GY-cnw" secondAttribute="centerY" id="5YJ-IW-aM9"/>
+                    <constraint firstItem="vHL-W1-cxS" firstAttribute="leading" secondItem="q6S-GY-cnw" secondAttribute="leading" constant="20" id="U7y-ow-RXO"/>
+                    <constraint firstItem="GbR-sq-KRS" firstAttribute="leading" secondItem="q6S-GY-cnw" secondAttribute="leading" constant="20" id="YYJ-b8-yN0"/>
+                    <constraint firstAttribute="trailing" secondItem="GbR-sq-KRS" secondAttribute="trailing" constant="20" id="gpR-Fx-S2r"/>
+                    <constraint firstItem="vHL-W1-cxS" firstAttribute="centerX" secondItem="q6S-GY-cnw" secondAttribute="centerX" id="gsc-K8-5IN"/>
+                    <constraint firstAttribute="trailing" secondItem="vHL-W1-cxS" secondAttribute="trailing" constant="20" id="h37-VO-yOA"/>
+                    <constraint firstAttribute="bottom" secondItem="GbR-sq-KRS" secondAttribute="bottom" constant="8" id="qap-St-Cde"/>
+                    <constraint firstItem="GbR-sq-KRS" firstAttribute="top" secondItem="vHL-W1-cxS" secondAttribute="bottom" constant="8" id="zc7-K1-hBa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="vHL-W1-cxS" id="ga2-NY-iI8"/>
+                <outlet property="scoreLabel" destination="GbR-sq-KRS" id="ROi-KF-p5K"/>
+            </connections>
+            <point key="canvasLocation" x="-1203.6231884057972" y="78.683035714285708"/>
+        </tableViewCell>
+    </objects>
+</document>

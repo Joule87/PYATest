@@ -1,0 +1,6 @@
+framework module Pods_PYATest_PYATestUITests {
+  umbrella header "Pods-PYATest-PYATestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
