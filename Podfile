@@ -7,7 +7,8 @@ target 'PYATest' do
 
   pod 'Alamofire'
   pod 'SwiftKeychainWrapper'
- 
+  pod 'MBProgressHUD', '~> 1.2.0'
+  
   # Pods for PYATest
 
   target 'PYATestTests' do

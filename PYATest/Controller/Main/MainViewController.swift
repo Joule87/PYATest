@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MainViewController: UIViewController {
+class MainViewController: BaseUIViewController {
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var mapContainer: UIView!
@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     }
     
     func requestAccesToken() {
+        showHud()
         let authAPI = AuthAPI()
         let authAPIManager = AuthAPIManager(authAPI: authAPI)
         authAPIManager.getAccessToken { (result) in
@@ -37,6 +38,7 @@ class MainViewController: UIViewController {
                 print("\(error.localizedDescription)")
                 break
             }
+            self.hideHUD()
         }
     }
     

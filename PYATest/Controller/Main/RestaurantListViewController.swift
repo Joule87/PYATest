@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class RestaurantListViewController: UIViewController {
+class RestaurantListViewController: BaseUIViewController {
     
     //MARK:- Outlets
     
@@ -32,6 +32,7 @@ class RestaurantListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         LocationManager.shared.setupDelegate = self
+        showHud()
         getRestaurants(from: 0)
     }
     
@@ -51,6 +52,9 @@ class RestaurantListViewController: UIViewController {
         restaurantTableView.reloadData()
     }
     
+    /// Gets all the restaurants near selected coordinates
+    /// - Parameters:
+    ///   - offset: Index of the element from which to obtain the results
     func getRestaurants(from offset: Int) {
         guard let coordinates = coordinates, let restaurantService = restaurantAPIManager else { return }
         let latitudAndLongitude = "\(coordinates.latitude),\(coordinates.longitude)"
@@ -64,6 +68,7 @@ class RestaurantListViewController: UIViewController {
                 AlertHelper.showBasicAlert(on: saveSelf, with: "Error", message: error.localizedDescription, actionTitle: "OK")
                 break
             }
+            saveSelf.hideHUD()
         })
     }
     

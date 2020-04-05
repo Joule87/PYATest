@@ -17,26 +17,36 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHL-W1-cxS">
-                        <rect key="frame" x="20" y="34.5" width="453" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="20" y="33.5" width="453" height="22.5"/>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbR-sq-KRS">
-                        <rect key="frame" x="20" y="63" width="453" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="20" y="64" width="453" height="19.5"/>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-qQ-vpN" userLabel="Separator Bar">
+                        <rect key="frame" x="0.0" y="88" width="493" height="1"/>
+                        <color key="backgroundColor" white="0.83565211187214594" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="CQC-8w-8M4"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="QeM-qQ-vpN" firstAttribute="leading" secondItem="q6S-GY-cnw" secondAttribute="leading" id="4pi-rY-ynq"/>
                     <constraint firstItem="vHL-W1-cxS" firstAttribute="centerY" secondItem="q6S-GY-cnw" secondAttribute="centerY" id="5YJ-IW-aM9"/>
+                    <constraint firstAttribute="trailing" secondItem="QeM-qQ-vpN" secondAttribute="trailing" id="RfQ-ak-QjY"/>
                     <constraint firstItem="vHL-W1-cxS" firstAttribute="leading" secondItem="q6S-GY-cnw" secondAttribute="leading" constant="20" id="U7y-ow-RXO"/>
                     <constraint firstItem="GbR-sq-KRS" firstAttribute="leading" secondItem="q6S-GY-cnw" secondAttribute="leading" constant="20" id="YYJ-b8-yN0"/>
                     <constraint firstAttribute="trailing" secondItem="GbR-sq-KRS" secondAttribute="trailing" constant="20" id="gpR-Fx-S2r"/>
                     <constraint firstItem="vHL-W1-cxS" firstAttribute="centerX" secondItem="q6S-GY-cnw" secondAttribute="centerX" id="gsc-K8-5IN"/>
                     <constraint firstAttribute="trailing" secondItem="vHL-W1-cxS" secondAttribute="trailing" constant="20" id="h37-VO-yOA"/>
-                    <constraint firstAttribute="bottom" secondItem="GbR-sq-KRS" secondAttribute="bottom" constant="8" id="qap-St-Cde"/>
+                    <constraint firstItem="QeM-qQ-vpN" firstAttribute="top" secondItem="GbR-sq-KRS" secondAttribute="bottom" constant="4.5" id="i0i-ek-bbt"/>
+                    <constraint firstAttribute="bottom" secondItem="QeM-qQ-vpN" secondAttribute="bottom" id="kUQ-i3-7pq"/>
                     <constraint firstItem="GbR-sq-KRS" firstAttribute="top" secondItem="vHL-W1-cxS" secondAttribute="bottom" constant="8" id="zc7-K1-hBa"/>
                 </constraints>
             </tableViewCellContentView>

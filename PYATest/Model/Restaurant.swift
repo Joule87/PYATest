@@ -8,8 +8,6 @@
 
 import Foundation
 
-//TODO:- Para el parsear la informacion proveniente del servidor usaria tres objetos (RestauranteDTO, RestauranteDTOMapper, y Restaurant) de esta manera cualquier cambio en la del servidor no afectaria mi modelo de negocio. Por cuestion de tiempo lo hago de la manera a continuacion.
-
 struct Restaurant : Codable {
     
     var coordinates: String

@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.0.2)
+  - MBProgressHUD (1.2.0)
   - SwiftKeychainWrapper (3.4.0)
 
 DEPENDENCIES:
   - Alamofire
+  - MBProgressHUD (~> 1.2.0)
   - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MBProgressHUD
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: c757d12b908830504ab05acd304df90d65fec6d4
+PODFILE CHECKSUM: 96be21f5b268ee3b11eda6285fc8f914d1f31ed2
 
 COCOAPODS: 1.8.4

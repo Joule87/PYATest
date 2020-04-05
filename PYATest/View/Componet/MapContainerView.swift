@@ -13,7 +13,9 @@ class MapContainerView: UIView {
     
     //MARK:- Properties
     
+    ///The UIViewController that this component will use to draw himself in.
     private var parentView: UIViewController!
+    
     private let map: MKMapView! = {
         let map = MKMapView()
         map.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +38,7 @@ class MapContainerView: UIView {
         return button
     }()
     
+    ///Radius to be shown in the map
     private let regionInMeters: Double = 500
     private var marker: CustomAnnotation?
     var delegate: MapContainerViewDelegate?
@@ -128,6 +131,7 @@ class MapContainerView: UIView {
         
     }
     
+    ///Adds a UILongPressGestureRecognizer on the Map
     private func addLongTapGestureOnMap() {
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
         longPressGestureRecognizer.minimumPressDuration = 0.2
@@ -135,8 +139,7 @@ class MapContainerView: UIView {
         self.map.addGestureRecognizer(longPressGestureRecognizer)
     }
     
-    
-    
+    ///Clears old annotations and draw a new one in the selected location
     @objc private func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
         if gestureReconizer.state == UIGestureRecognizer.State.ended {
             clearAnnotations()
@@ -146,6 +149,9 @@ class MapContainerView: UIView {
         }
     }
     
+    /// Gets information about given coordinates using reverseGeocodeLocation
+    /// - Parameters:
+    ///   - selectedLocation: Coordinates for getting the information
     func getPlaceMark(for selectedLocation: CLLocationCoordinate2D) {
         guard let delegate = delegate else { return }
         let geoCoder = CLGeocoder()
@@ -165,16 +171,20 @@ class MapContainerView: UIView {
                 delegate.didChangeLocation(placeMarked: placemark)
                 saveSelf.addMarker(title: streetName, subtitle: streetNumber, selectedLocation)
             }
-            
         }
-        
     }
     
+    /// Loads a map container as a child of the parentView and pin the given restaurant on the map
+    /// - Parameters:
+    ///   - restaurant: Restaurant to show on the map
     func loadMap(on restaurant: Restaurant) {
         layoutMapContainerView()
         pin(restaurant: restaurant)
     }
     
+    /// Loads a map container as a child of the parentView and focus the view on the given coordinates
+    /// - Parameters:
+    ///   - coordinates: Coordinates to be spotted on the map
     func loadMap(on coordinates: CLLocationCoordinate2D) {
         layoutMapContainerView()
         centerViewOn(coordinates)
@@ -182,6 +192,9 @@ class MapContainerView: UIView {
         layoutInterrogationButton()
     }
     
+    ///Pins a given restaurant in the map
+    /// - Parameters:
+    ///   - restaurant: Restaurant to be spotted
     private func pin(restaurant: Restaurant) {
         guard let coordinates = CoordinatesHelper.getCoordinates(from: restaurant.coordinates) else { return }
         
@@ -195,6 +208,11 @@ class MapContainerView: UIView {
         centerViewOn(cLocationCoordinate2D)
     }
     
+    ///Creates a CustomAnnotation and add it to the Map.
+    /// - Parameters:
+    ///   - title: Text to be placed in the CustomAnnotation's header
+    ///   - subtitle: Text to be placed in the CustomAnnotation's body
+    ///   - cLocationCoordinate2D: Coordinates where the annotation will be show
     private func addMarker(title: String, subtitle: String, _ cLocationCoordinate2D: CLLocationCoordinate2D) {
         marker = CustomAnnotation(title: title, subtitle: subtitle, coordinate: cLocationCoordinate2D)
         if let marker = self.marker {
@@ -203,6 +221,9 @@ class MapContainerView: UIView {
         }
     }
     
+    ///Centers the map on the given coordinates
+    /// - Parameters:
+    ///   - cLocationCoordinate2D: Coordinates that it will be used to center the map
     private func centerViewOn(_ cLocationCoordinate2D: CLLocationCoordinate2D) {
         let region = MKCoordinateRegion(center: cLocationCoordinate2D, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
         map.setRegion(region, animated: true)
