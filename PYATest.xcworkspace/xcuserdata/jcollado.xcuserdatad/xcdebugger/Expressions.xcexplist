@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "RestaurantListViewController.tableView(_:willDisplay:forRowAt:):RestaurantListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "restaurantList.count">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RestaurantListViewController.getRestaurants(from:):RestaurantListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "restaurantAPIManager">
+            </PersistentString>
+            <PersistentString
+               value = "coordinates">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RestaurantListViewController.processResponse(_:):RestaurantListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "value.total">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LocationManager.currentCoordinates.getter:LocationManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cLocationManager">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

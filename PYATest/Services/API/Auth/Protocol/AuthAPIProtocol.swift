@@ -11,5 +11,5 @@ import Foundation
 protocol AuthAPIProtocol {
     var authAPI: AuthAPI { get set }
     init(authAPI: AuthAPI)
-    func getAccessToken(completion: @escaping (Results<AccessToken>) -> ())
+    func getAccessToken(clientId: String, clientSecret: String, completion: @escaping (Results<AccessToken>) -> ())
 }

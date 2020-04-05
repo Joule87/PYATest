@@ -21,7 +21,7 @@ class RestaurantListViewController: BaseUIViewController {
     var restaurantAPIManager: RestaurantAPIProtocol?
     
     private var restaurantList = [Restaurant]()
-    
+    private var totalRestaurants = 0
     //MARK:- View Controller Lifecycle
     
     override func viewDidLoad() {
@@ -31,14 +31,8 @@ class RestaurantListViewController: BaseUIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        LocationManager.shared.setupDelegate = self
         showHud()
         getRestaurants(from: 0)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        LocationManager.shared.setupDelegate = nil
     }
     
     //MARK:- View Controller Functions
@@ -48,6 +42,7 @@ class RestaurantListViewController: BaseUIViewController {
     }
     
     private func processResponse(_ value: (GeneralResponse<Restaurant>)) {
+        totalRestaurants = value.total
         restaurantList.append(contentsOf: value.data)
         restaurantTableView.reloadData()
     }
@@ -56,7 +51,11 @@ class RestaurantListViewController: BaseUIViewController {
     /// - Parameters:
     ///   - offset: Index of the element from which to obtain the results
     func getRestaurants(from offset: Int) {
-        guard let coordinates = coordinates, let restaurantService = restaurantAPIManager else { return }
+        guard let coordinates = coordinates, let restaurantService = restaurantAPIManager else {
+            AlertHelper.showBasicAlert(on: self, with: "Error", message: "The app is not getting any coordinates from this device", actionTitle: "OK")
+            hideHUD()
+            return
+        }
         let latitudAndLongitude = "\(coordinates.latitude),\(coordinates.longitude)"
         restaurantService.getRestaurantList(on: latitudAndLongitude, offset: offset, completion: { [weak self] (result) in
             guard let saveSelf = self else { return}
@@ -103,18 +102,10 @@ extension RestaurantListViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == (restaurantList.count - 15) {
+        if indexPath.row == (restaurantList.count - 15), totalRestaurants > restaurantList.count {
             let offset = restaurantList.count
             getRestaurants(from: offset)
         }
-    }
-    
-}
-
-extension RestaurantListViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        LocationManager.shared.checkLocationAuthorization(self)
     }
     
 }

@@ -14,15 +14,14 @@ class RestaurantAPI {
     private let credentiaManager = CredentialManager()
     
     func getRestaurantDataRequest(coordinaates: String, offset: Int) -> DataRequest {
-        let max = 50
-        let point = 1
         let fields = "name,ratingScore,coordinates"
-        let apiRestaurantPath = "\(Constants.API.baseURL)/search/restaurants?point=\(coordinaates)&country=\(point)&max=\(max)&offset=\(offset)&fields=\(fields)"
+        let restaurantAPIPath = "search/restaurants"
+        let requestURL = "\(Constants.API.baseURL)/\(restaurantAPIPath)?point=\(coordinaates)&country=\(Constants.API.COUNTRY_CODE)&max=\(Constants.API.MAX_RESULTS)&offset=\(offset)&fields=\(fields)"
         let accessToken = credentiaManager.accessToken!
         let headerInformation = ["Authorization": "\(accessToken)", "Content-Type": "application/json"]
         let httpHeaders = HTTPHeaders(headerInformation)
         
-        return AF.request(apiRestaurantPath,
+        return AF.request(requestURL,
                           method: HTTPMethod.get,
                           parameters: nil,
                           encoding: JSONEncoding.default,

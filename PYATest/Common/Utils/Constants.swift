@@ -15,5 +15,7 @@ struct Constants {
     
     struct API {
         static let baseURL = Bundle.main.infoDictionary!["SERVER_URL"] as! String
+        static let MAX_RESULTS = 50
+        static let COUNTRY_CODE = 1
     }
 }

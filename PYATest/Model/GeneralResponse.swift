@@ -10,9 +10,11 @@ import Foundation
 
 class GeneralResponse<T: Codable>: Codable {
     
+    var total: Int
     var data: [T]
     
-    init(data: [T]) {
+    init(total: Int, data: [T]) {
+        self.total = total
         self.data = data
     }
     

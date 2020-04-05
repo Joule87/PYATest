@@ -26,7 +26,7 @@ class MapContainerView: UIView {
     private let closeButton: UIButton! = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(#imageLiteral(resourceName: "closeBoard"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "closeButton"), for: .normal)
         button.imageView?.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
         return button
     }()
@@ -80,7 +80,7 @@ class MapContainerView: UIView {
     }
     
     @objc private func didTapInterrogationButton() {
-        AlertHelper.showBasicAlert(on: parentView, with: "Help", message: "Long press on the map to select a location", actionTitle: "Ok")
+        AlertHelper.showBasicAlert(on: parentView, with: "Help", message: "Long press on the map to select a location", actionTitle: "OK")
     }
     
     private func layoutCloseButton() {

@@ -17,6 +17,7 @@
 		F4070F9E2438F7F40021418F /* MapContainerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4070F9D2438F7F40021418F /* MapContainerViewDelegate.swift */; };
 		F4070FA024391F8B0021418F /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4070F9F24391F8A0021418F /* CustomAnnotation.swift */; };
 		F479DAA4243A12E600FA36A5 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F479DAA3243A12E600FA36A5 /* BaseUIViewController.swift */; };
+		F479DAA6243A3FDB00FA36A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F479DAA5243A3FDB00FA36A5 /* LoginViewController.swift */; };
 		F4B06764243666CF008DD26C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B06763243666CF008DD26C /* AppDelegate.swift */; };
 		F4B06766243666CF008DD26C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B06765243666CF008DD26C /* SceneDelegate.swift */; };
 		F4B06768243666CF008DD26C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B06767243666CF008DD26C /* MainViewController.swift */; };
@@ -81,6 +82,7 @@
 		F4070F9D2438F7F40021418F /* MapContainerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainerViewDelegate.swift; sourceTree = "<group>"; };
 		F4070F9F24391F8A0021418F /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		F479DAA3243A12E600FA36A5 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
+		F479DAA5243A3FDB00FA36A5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F4B06760243666CF008DD26C /* PYATest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYATest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B06763243666CF008DD26C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B06765243666CF008DD26C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -367,9 +369,10 @@
 		F4B067B4243686C0008DD26C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F479DAA3243A12E600FA36A5 /* BaseUIViewController.swift */,
+				F479DAA5243A3FDB00FA36A5 /* LoginViewController.swift */,
 				F4B06767243666CF008DD26C /* MainViewController.swift */,
 				F4B067B72436A140008DD26C /* RestaurantListViewController.swift */,
-				F479DAA3243A12E600FA36A5 /* BaseUIViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				F4B06764243666CF008DD26C /* AppDelegate.swift in Sources */,
 				F4B0679B24367D02008DD26C /* Results.swift in Sources */,
 				F4B067AE24368380008DD26C /* AuthAPIManager.swift in Sources */,
+				F479DAA6243A3FDB00FA36A5 /* LoginViewController.swift in Sources */,
 				F4B067CB2436BF30008DD26C /* RestaurantAPIProtocol.swift in Sources */,
 				F4B067CD2436C0B9008DD26C /* GeneralResponse.swift in Sources */,
 				F4B067BB2436A2BC008DD26C /* RestaurantTableViewCell.swift in Sources */,

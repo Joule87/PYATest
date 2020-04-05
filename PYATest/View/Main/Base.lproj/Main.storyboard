@@ -8,6 +8,84 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="6MD-HM-SVK">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kDo-da-iAt" customClass="LoginViewController" customModule="PYATest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2CO-tu-sLN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Client Id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G71-5m-5Ly">
+                                <rect key="frame" x="20" y="133" width="79" height="23"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GG0-bl-y6g">
+                                <rect key="frame" x="107" y="127.5" width="287" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Client Secret:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTB-7q-lUS">
+                                <rect key="frame" x="20" y="186" width="120.5" height="23"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELz-w7-XA2">
+                                <rect key="frame" x="148.5" y="180.5" width="245.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5V-WK-j3q">
+                                <rect key="frame" x="40" y="244.5" width="334" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eMb-77-5Bd"/>
+                                </constraints>
+                                <state key="normal" title="Get API Access">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapGetAccessButton:" destination="kDo-da-iAt" eventType="touchUpInside" id="myY-uw-3g1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jTB-7q-lUS" firstAttribute="leading" secondItem="G71-5m-5Ly" secondAttribute="leading" id="7xj-51-UaI"/>
+                            <constraint firstItem="jTB-7q-lUS" firstAttribute="top" secondItem="G71-5m-5Ly" secondAttribute="bottom" constant="30" id="8P3-mr-Dvb"/>
+                            <constraint firstItem="f5V-WK-j3q" firstAttribute="top" secondItem="ELz-w7-XA2" secondAttribute="bottom" constant="30" id="98U-hA-9vs"/>
+                            <constraint firstItem="GG0-bl-y6g" firstAttribute="leading" secondItem="G71-5m-5Ly" secondAttribute="trailing" constant="8" id="ER9-8e-Dtk"/>
+                            <constraint firstItem="GG0-bl-y6g" firstAttribute="centerY" secondItem="G71-5m-5Ly" secondAttribute="centerY" id="GqO-e4-NT1"/>
+                            <constraint firstItem="Fdh-gL-B7U" firstAttribute="trailing" secondItem="f5V-WK-j3q" secondAttribute="trailing" constant="40" id="Swj-nU-Ru1"/>
+                            <constraint firstItem="Fdh-gL-B7U" firstAttribute="trailing" secondItem="GG0-bl-y6g" secondAttribute="trailing" constant="20" id="TmZ-L1-EIU"/>
+                            <constraint firstItem="G71-5m-5Ly" firstAttribute="leading" secondItem="Fdh-gL-B7U" secondAttribute="leading" constant="20" id="Uaq-4s-EHC"/>
+                            <constraint firstItem="f5V-WK-j3q" firstAttribute="leading" secondItem="Fdh-gL-B7U" secondAttribute="leading" constant="40" id="XVR-Fm-goZ"/>
+                            <constraint firstItem="ELz-w7-XA2" firstAttribute="centerY" secondItem="jTB-7q-lUS" secondAttribute="centerY" id="XVV-QC-FxJ"/>
+                            <constraint firstItem="G71-5m-5Ly" firstAttribute="top" secondItem="Fdh-gL-B7U" secondAttribute="top" constant="45" id="YmY-rQ-Bnh"/>
+                            <constraint firstItem="ELz-w7-XA2" firstAttribute="leading" secondItem="jTB-7q-lUS" secondAttribute="trailing" constant="8" id="ahu-uV-4ny"/>
+                            <constraint firstItem="Fdh-gL-B7U" firstAttribute="trailing" secondItem="ELz-w7-XA2" secondAttribute="trailing" constant="20" id="x6Y-bI-yes"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fdh-gL-B7U"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wvU-mU-jns"/>
+                    <connections>
+                        <outlet property="clientIdTextView" destination="GG0-bl-y6g" id="he1-Ac-j05"/>
+                        <outlet property="clientSecretTextView" destination="ELz-w7-XA2" id="IPa-eY-FmS"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="MainSegue" id="BEZ-Vv-uJI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kf-2T-yzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="139"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -150,12 +228,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mi1-VW-E0H"/>
+                        <segue destination="kDo-da-iAt" kind="relationship" relationship="rootViewController" id="UyX-6U-Jqt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUX-7R-4Og" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="-912" y="139"/>
         </scene>
     </scenes>
 </document>

@@ -19,27 +19,6 @@ class MainViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationLabel.text = coordinates == nil ? "Location: Current Location" : nil
-        requestAccesToken()
-        LocationManager.shared.checkLocationServices(viewController: self)
-        
-    }
-    
-    func requestAccesToken() {
-        showHud()
-        let authAPI = AuthAPI()
-        let authAPIManager = AuthAPIManager(authAPI: authAPI)
-        authAPIManager.getAccessToken { (result) in
-            switch result {
-            case .success(let value):
-                let credentialManager = CredentialManager()
-                credentialManager.accessToken = value.accessToken
-                break
-            case .failure(let error, _):
-                print("\(error.localizedDescription)")
-                break
-            }
-            self.hideHUD()
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,7 +29,10 @@ class MainViewController: BaseUIViewController {
     }
     
     @IBAction func didTapChangeLocation(_ sender: UIButton) {
-        guard let selectedCoordinates = coordinates ?? LocationManager.shared.currentCoordinates else { return }
+        guard let selectedCoordinates = coordinates ?? LocationManager.shared.currentCoordinates else {
+            AlertHelper.showBasicAlert(on: self, with: "Error", message: "The app is not getting any coordinates from this device", actionTitle: "OK")
+            return
+        }
         let map = MapContainerView(viewController: self)
         map.delegate = self
         map.loadMap(on: selectedCoordinates)

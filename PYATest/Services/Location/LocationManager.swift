@@ -13,7 +13,7 @@ class LocationManager {
     
     static let shared = LocationManager()
     private let cLocationManager = CLLocationManager()
-    var setupDelegate: CLLocationManagerDelegate? {
+    var delegate: CLLocationManagerDelegate? {
         get {
             return cLocationManager.delegate
         }
@@ -35,12 +35,8 @@ class LocationManager {
         if CLLocationManager.locationServicesEnabled() {
             checkLocationAuthorization(viewController)
         } else {
-            AlertHelper.showBasicAlert(on: viewController, with: "Alert", message: "Your device does not have location services enabled", actionTitle: "ok")
+            AlertHelper.showBasicAlert(on: viewController, with: "Alert", message: "Your device does not have location services enabled, this is required for the app proper functioning", actionTitle: "OK")
         }
-    }
-    
-    func setDelegate(delegate: CLLocationManagerDelegate) {
-        cLocationManager.delegate = delegate
     }
     
     func checkLocationAuthorization(_ viewController: UIViewController) {
@@ -48,12 +44,12 @@ class LocationManager {
         case .authorizedWhenInUse:
             break
         case .denied:
-             AlertHelper.showBasicAlert(on: viewController, with: "Alert", message: "Turn on location services on your device, please", actionTitle: "ok")
+            AlertHelper.showBasicAlert(on: viewController, with: "Alert", message: "For a proper app functioning grant access to this app for using device location services", actionTitle: "OK")
             break
         case .notDetermined:
             cLocationManager.requestWhenInUseAuthorization()
         case .restricted:
-             AlertHelper.showBasicAlert(on: viewController, with: "Alert", message: "This app can not to use location services due to restriction.", actionTitle: "ok")
+            AlertHelper.showBasicAlert(on: viewController, with: "Alert", message: "This app can not to use location services due to restrictions.", actionTitle: "OK")
             break
         case .authorizedAlways:
             break

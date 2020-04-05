@@ -11,11 +11,9 @@ import Alamofire
 
 class AuthAPI {
     
-    func getAccessTokenDataRequest() -> DataRequest {
+    func getAccessTokenDataRequest(clientId: String, clientSecret: String) -> DataRequest {
         
-        let appClientId = "trivia_f"
-        let appClientSecret = "PeY@@Tr1v1@943"
-        let apiAuthPath = "\(Constants.API.baseURL)/tokens?clientId=\(appClientId)&clientSecret=\(appClientSecret)"
+        let apiAuthPath = "\(Constants.API.baseURL)/tokens?clientId=\(clientId)&clientSecret=\(clientSecret)"
         
         return AF.request(apiAuthPath,
                           method: HTTPMethod.get,

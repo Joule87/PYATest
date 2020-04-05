@@ -15,8 +15,8 @@ class AuthAPIManager: AuthAPIProtocol {
         self.authAPI = authAPI
     }
     
-    func getAccessToken(completion: @escaping (Results<AccessToken>) -> ()) {
-        let request = authAPI.getAccessTokenDataRequest()
+    func getAccessToken(clientId: String, clientSecret: String, completion: @escaping (Results<AccessToken>) -> ()) {
+        let request = authAPI.getAccessTokenDataRequest(clientId: clientId, clientSecret: clientSecret)
         AlamofireRequest.createObjectRequest(request: request) { result in
             completion(result)
         }
